@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiência Prática 4 - Frontend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Navegação principal">
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <button id="tema-btn" aria-label="Alternar modo escuro" aria-expanded="false">Mudar Tema</button>
+    </header>
+
+    <main>
+        <section id="sobre" aria-labelledby="titulo-sobre">
+            <h1 id="titulo-sobre">Projeto Frontend - Acessibilidade</h1>
+            <p>Este projeto aplica tags semânticas e diretrizes WCAG 2.1 AA.</p>
+        </section>
+
+        <section id="contato">
+            <h2>Fale Conosco</h2>
+            <form>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" aria-required="true" required>
+                <button type="submit" class="btn-primary" aria-label="Enviar formulário">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Matheus Santos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Script simples para o Modo Escuro
+        const btn = document.getElementById('tema-btn');
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            btn.setAttribute('aria-expanded', isDark);
+        });
+    </script>
+</body>
+
+</html>

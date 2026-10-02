@@ -1,0 +1,47 @@
+/* Variáveis para controle de tema (Padrão Claro) */
+:root {
+    --bg-color: #F5F5F5;
+    --text-color: #333333;
+    --primary-color: #0056B3;
+    --btn-text: #FFFFFF;
+}
+
+/* Modo Escuro manual via classe */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #F5F5F5;
+    --primary-color: #4DA3FF;
+    --btn-text: #121212;
+}
+
+/* Modo Escuro automático via sistema operacional */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #F5F5F5;
+    }
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Foco acessível para navegação por teclado */
+a:focus,
+button:focus,
+input:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--btn-text);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
